@@ -6,7 +6,7 @@ const Header=()=>{
     return (
         <>
             <div className="lg:w-max">
-                <NavLink to="/H">
+                <NavLink to="/">
                     Home
                 </NavLink>
                 <NavLink to="/aboutus">
