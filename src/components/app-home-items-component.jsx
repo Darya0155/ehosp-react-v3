@@ -74,12 +74,12 @@ const ProductItem=({product})=>{
         </div> :
         
         
-        <div class="grid grid-cols-3 text-center text-xl mt-5">
-          <button class="rounded-sm  
+        <div className="grid grid-cols-3 text-center text-xl mt-5">
+          <button className="rounded-sm  
            hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none" onClick={()=>setCount(count-1)}> - </button>
-          <input class="rounded-sm  
+          <input className="rounded-sm  
           border-gray-900  text-center" type="number" value={count} readOnly />
-          <button class="rounded-sm  
+          <button className="rounded-sm  
            hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none" onClick={()=>setCount(count+1)}> + </button>
 
         </div>
