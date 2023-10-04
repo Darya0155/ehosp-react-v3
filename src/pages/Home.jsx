@@ -2,6 +2,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import QRScanner from "../components/QR-scanner";
 import { useEffect, useState } from "react";
 import QRGenerator from "../components/QR-Generator";
+import PageNotFound from "./Error";
 
 const Home = () => {
   const [QrScanResult, setQRScanResult] = useState("");
@@ -30,9 +31,8 @@ const Home = () => {
             </div>
         }
 
-        <div >
-            <QRGenerator value={QrScanResult} />
-        </div>
+        <PageNotFound />
+
     </>
   );
 };

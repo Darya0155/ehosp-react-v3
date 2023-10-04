@@ -4,9 +4,7 @@ import QRCode from "react-qr-code";
 const QRGenerator=({value})=>{
 
     return (
-        <>
-            <QRCode value={value} />
-        </>
+        <QRCode value={value} />
     )
 }
 export default QRGenerator;

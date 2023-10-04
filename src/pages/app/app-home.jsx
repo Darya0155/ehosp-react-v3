@@ -6,6 +6,7 @@ import SearchComponent from "../../components/search-component";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 import AppDailog from "../../components/app-dailog";
 import { Button } from "@mui/material";
+import { useParams } from "react-router-dom";
 
 const CategoryDailog = () => {
   const [open, setOpen] = useState(false);
@@ -57,6 +58,8 @@ const CategoryDailog = () => {
 };
 
 const AppHome = () => {
+  const {appId}=useParams()
+  console.log(appId)
   return (
     <>
       <div className="flex">

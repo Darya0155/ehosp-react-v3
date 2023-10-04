@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function AppShoppingCart() {
     const [show, setShow] = useState(true);
+    const {appId} = useParams()
     const naviagte=useNavigate()
     return (
         <>
@@ -12,7 +13,7 @@ function AppShoppingCart() {
                         <div className="w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700" id="checkout">
                             <div className="flex md:flex-row flex-col justify-end" id="cart">
                                 <div className="lg:w-1/2 w-full md:pl-10 pl-4 pr-10 md:pr-4 md:py-12 py-8 bg-white overflow-y-auto overflow-x-hidden h-screen" id="scroll">
-                                    <div className="flex items-center text-gray-500 hover:text-gray-600 cursor-pointer" onClick={() => naviagte("/ns/app")}>
+                                    <div className="flex items-center text-gray-500 hover:text-gray-600 cursor-pointer" onClick={() => naviagte("/ns/app/"+appId)}>
                                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chevron-left" width={16} height={16} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                             <polyline points="15 6 9 12 15 18" />
@@ -121,7 +122,7 @@ function AppShoppingCart() {
                                                 <p className="text-2xl leading-normal text-gray-800">Total</p>
                                                 <p className="text-2xl font-bold leading-normal text-right text-gray-800">$10,240</p>
                                             </div>
-                                            <button onClick={() => naviagte("/ns/app/check-out-form")} className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white">
+                                            <button onClick={() => naviagte("/ns/app/"+appId+"/check-out-form")} className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white">
                                                 Checkout
                                             </button>
                                         </div>

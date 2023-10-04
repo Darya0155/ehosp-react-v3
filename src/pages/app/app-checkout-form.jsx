@@ -3,7 +3,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
 import { CheckBadgeIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import AppInfoModel from '../../components/info-model-component'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -14,9 +14,10 @@ export default function CheckoutForm() {
   const [policyEnabled, setPolicyEnabled] = useState(false)
   const [confirmModelShow,setConfirmModelShow]=useState(false);
   const navigate =useNavigate()
+  const {appId}=useParams();
 
   const onOkeyEvent=()=>{
-    navigate("/ns/app")
+    navigate("/ns/app/"+appId);
   }
 
   return (
