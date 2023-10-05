@@ -11,6 +11,7 @@ import AdminPage from './pages/admin/admin';
 import AdminDashBoard from './pages/admin/admin-dashbard';
 import AdminMyQR from './pages/admin/admin-myQR';
 import PageNotFound from './pages/Error';
+import AdminProducts from './pages/admin/admin-products';
 
 
 function AppRoutes() {
@@ -32,6 +33,8 @@ function AppRoutes() {
         <Route path="a/admin/:appId" element={<AdminPage/>}>
           <Route path="" element={<AdminDashBoard/>} />
           <Route path="my-qr" element={<AdminMyQR/>} />
+          <Route path="products" element={<AdminProducts/>} />
+
         </Route>
         <Route path="o/owner" element={<>Admin</>}></Route>
         <Route path="*" element={<PageNotFound/>} />

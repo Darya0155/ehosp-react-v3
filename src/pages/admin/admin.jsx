@@ -16,46 +16,51 @@ function AdminPage(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const Menu = [
-   {text:"DashBoard",icon:"D",to:"/a/admin/"+appId},
-   {text:"QR",icon:"Q",to:`/a/admin/${appId}/my-qr`}
-  ]
-  const Menu2 = [
-   {text:"New Order",icon:"N",to:`/a/admin/${appId}`},
-   {text:"Accepted Order",icon:"A",to:`/a/admin/${appId}/my-qr`}
+  
+  const Menu=[{
+    menu:[
+      {text:"DashBoard",icon:"D",to:"/a/admin/"+appId},
+      {text:"QR",icon:"Q",to:`/a/admin/${appId}/my-qr`}
+     ],},
+
+    {menu:[
+      {text:"New Order",icon:"N",to:`/a/admin/${appId}`},
+      {text:"Accepted Order",icon:"A",to:`/a/admin/${appId}/my-qr`}
+    ]},
+    {menu:[
+      {text:"Products",icon:"P",to:`/a/admin/${appId}/products`},
+    ]}
   ]
 
+  
+
+ 
 
 
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
-      <List>
-        {Menu.map((mItem, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton onClick={()=>{navigate(mItem.to)}}>
-                  <ListItemIcon>
-                     {mItem.icon}
-                  </ListItemIcon>
-                  <ListItemText primary={mItem.text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-      {Menu2.map((mItem, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton onClick={()=>{navigate(mItem.to)}}>
-                  <ListItemIcon>
-                     {mItem.icon}
-                  </ListItemIcon>
-                  <ListItemText primary={mItem.text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      {Menu.map(({menu},menuIndex)=>(
+            <List key={menuIndex}>
+          {menu.map((mItem, index) => (
+            <ListItem key={index} disablePadding>
+              <ListItemButton onClick={()=>{navigate(mItem.to)}}>
+                    <ListItemIcon>
+                      {mItem.icon}
+                    </ListItemIcon>
+                    <ListItemText primary={mItem.text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+          <Divider />
+        </List>
+        
+        ))
+      }
+      
+        
+     
     </div>
   );
 
